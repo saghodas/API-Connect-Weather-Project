@@ -1,7 +1,5 @@
 var http = require('http'); 
-//var url = require('url');
-// request = require('request');
-const qs = require('querystring');
+var qs = require('querystring');
 var fs = require('fs');
 var index = fs.readFileSync('index.js');
 var zip = require('./zipcode.js')
@@ -43,8 +41,7 @@ http.createServer(function (request, response) {
 	  		
         });
         function callback(message) {
-        	//response.writeHead(200, {'Content-Type': 'text/html'});
-        	response.set('Content-Type', 'text/html')
+        	response.writeHead(200, {'Content-Type': 'text/html'});
         	response.end(message);
     	}
     }

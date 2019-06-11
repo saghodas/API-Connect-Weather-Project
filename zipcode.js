@@ -1,20 +1,12 @@
-function get_current_weather(zipcode, unit, callback) {
+var common = require('./common.js')
 
+function get_current_weather(zipcode, unit, callback) {
  	var uri = 'http://api.openweathermap.org/data/2.5/weather'
 	var api_key ='355e806e0c6b3aa9c5c24c36144d073b'
-	var units =''
-	if (unit =='celsius')
-	{
-	  	units = '&units=metric'
-	}
-	else if (unit =='&units=fahrenheit')
-	{
-	  	units = 'imperial'
-	}
-	  	
+	var units = common.getUnit(unit)
 	var url = uri + '?zip=' + zipcode +'&APPID=' + api_key + units
 	console.log(url)
-	const request = require('request');
+	var request = require('request');
 	request(url, function (error, response, body) {
 
   	if(error)
@@ -38,7 +30,8 @@ function get_current_weather(zipcode, unit, callback) {
 	    var jsonBody = JSON.parse(body);
 	    //console.log(jsonBody);
 	    var jsonCustom = new Object();
-	    jsonCustom.coordinates. = jsonBody.coord
+	    jsonCustom.latitude = jsonBody.coord.lat
+	    jsonCustom.longitude = jsonBody.coord.lon
 	    jsonCustom.current_conditions = jsonBody.weather[0].description
 	    jsonCustom.current_temp = jsonBody.main.temp
 	    jsonCustom.high_temp = jsonBody.main.temp_max
