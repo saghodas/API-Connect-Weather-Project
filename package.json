@@ -1,0 +1,18 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "Current weather conditions",
+  "main": "index.js",
+  "scripts": {
+    "test": "get_current_conditions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "test"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Sangita",
+  "license": "UNLICENSED"
+}
