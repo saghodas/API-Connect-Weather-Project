@@ -1,6 +1,8 @@
 # API-Connect-Weather-Project
 
-**** query the OpenWeatherMap "current conditions" API for both a zipcode and/or city name to find the current weather conditions in requested unit i.e. celsius, fahrenheit, or kelvin.  ****
+This project query the OpenWeatherMap "current conditions" API for both zipcode and/or city name to find the current weather conditions in requested unit i.e. celsius, fahrenheit, or kelvin.
+
+https://openweathermap.org/current#data
 
 1. install node. 
 2. start mode server:  node server.js (listens on port 8080)
